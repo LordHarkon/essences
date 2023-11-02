@@ -59,9 +59,9 @@ function addCopyButtons() {
       console.log(`Clicked copy for ${essence.name} (${essence.id})`);
 
       const text = `**${essence.name}**
-*${essence.description[0]}
+*${essence.description[0]}*
 ${essence.description
-  .filter((e, i) => (i === 0 ? false : true))
+  .filter((_, i) => i !== 0)
   .map((ed) => `- ${ed}`)
   .join("\n")}`;
 
